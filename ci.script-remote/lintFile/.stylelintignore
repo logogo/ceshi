@@ -1,0 +1,6 @@
+node_modules
+webpack
+ci.script
+deploy
+dist
+public

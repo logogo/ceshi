@@ -1,0 +1,30 @@
+{ 
+  "extends": ["stylelint-config-standard", "stylelint-config-standard-scss"], 
+  "plugins": ["stylelint-scss", "stylelint-order"],
+  "overrides": [
+    {
+      "files": [ "**/*.scss", "*.scss" ],
+      "customSyntax": "postcss-scss"
+    },
+    {
+      "files": [ "**/*.css", "*.css" ],
+      "customSyntax": "postcss-scss"
+    },
+    {
+      "files": [ "**/*.vue", "*.vue" ],
+      "customSyntax": "postcss-scss"
+    }
+  ],
+  "rules": {
+    "scss/at-rule-no-unknown": true,
+    "scss/dollar-variable-pattern": "[a-z | _ | - | A-Z]",
+    "scss/selector-no-redundant-nesting-selector": true,
+    "scss/at-mixin-pattern": null,
+    "scss/at-import-partial-extension": null,
+    "scss/at-if-closing-brace-newline-after": "always-last-in-chain",
+    "scss/at-if-closing-brace-space-after": "always-intermediate",
+    "scss/at-else-closing-brace-newline-after": "always-last-in-chain",
+    "scss/at-else-closing-brace-space-after": "always-intermediate",
+    "scss/at-else-if-parentheses-space-before": "always"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "name": "erwan-ci",
+  "version": "1.1.11",
+  "description": "CI持续集成",
+  "main": "bin/index.js",
+  "bin": {
+    "ew-ci": "bin/index.js"
+  },
+  "scripts": {
+    "commit": "git add -A && ./node_modules/.bin/git-cz",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+    "release": "standard-version",
+    "push": "node ./commit/index && npm publish",
+    "lint": "eslint --fix --ext .js"
+  },
+  "repository": "git@git.feierlaiedu.com:material-platform/erwan-ci.git",
+  "author": "zhupenghui",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.7.0"
+  },
+  "publishConfig": {
+    "registry": "http://verdaccio.kakahui.net/"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "npx commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "@commitlint/cli": "^16.2.3",
+    "@commitlint/config-conventional": "^16.2.1",
+    "chalk": "4.1.2",
+    "commander": "8.3.0",
+    "commitizen": "^4.2.4",
+    "conventional-changelog": "^3.1.25",
+    "conventional-changelog-cli": "^2.2.2",
+    "eslint": "^8.13.0",
+    "eslint-plugin-vue": "^8.6.0",
+    "eslint-visitor-keys": "3.3.0",
+    "glob": "7.2.0",
+    "image-size": "0.9.3",
+    "inquirer": "^8.2.2",
+    "log-symbols": "4.1.0",
+    "postcss-less": "6.0.0",
+    "semver": "7.3.6",
+    "shelljs": "0.8.5",
+    "standard-version": "^9.3.2",
+    "stylelint": "^14.6.1",
+    "stylelint-config-standard": "^25.0.0",
+    "stylelint-order": "^5.0.0",
+    "update-notifier": "5.1.0"
+  }
+}

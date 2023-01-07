@@ -1,0 +1,28 @@
+{
+  "scripts": {
+    "eslint": "node ci.script.js",
+    "eslint-fix": "yarn run lint && yarn run lint-style",
+    "prepare": "husky install && husky add .husky/pre-commit \"yarn run eslint\""
+  },
+  "lint-staged": {
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.8",
+    "@babel/eslint-parser": "^7.17.0",
+    "@commitlint/cli": "^13.2.1",
+    "@commitlint/config-conventional": "^13.2.0",
+    "eslint-plugin-html": "^6.2.0",
+    "husky": "^7.0.4",
+    "image-size": "0.9.3",
+    "lint-staged": "^11.2.2",
+    "postcss": "^8.4.12",
+    "postcss-html": "^1.4.1",
+    "stylelint": "^14.7.1",
+    "stylelint-config-html": "^1.0.0",
+    "stylelint-config-standard": "^24.0.0",
+    "stylelint-order": "^5.0.0",
+    "standard-version": "^9.3.1",
+    "shelljs": "^0.8.5",
+    "eslint-plugin-jsx": "^0.1.0"
+  }
+}
